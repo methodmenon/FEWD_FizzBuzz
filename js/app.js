@@ -2,9 +2,14 @@ $(document).ready(function(){
 
 	$("#btn_val").click(function(e){
 		e.preventDefault(e);
+		$("#fb_div").append('<ul id="fb_list"></ul>');
 		var num_to_fb = $("#val").val();
 		fizzBuzz(num_to_fb);
 		$("#val").val(" ");
+	});
+	$("#btn_reset").click(function(e){
+		e.preventDefault(e);
+		$("#fb_list").remove();
 	});
 
 });
