@@ -13,6 +13,13 @@ $(document).ready(function(){
 	});
 
 });
+''' 
+edge cases to work with: 
+1) clicking when there is no value
+2) having an input that is not a number
+3) typing a negative number
+
+'''
 
 function fizzBuzz(x) {
 	var gen_list = $("#fb_list");
