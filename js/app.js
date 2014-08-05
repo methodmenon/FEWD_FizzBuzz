@@ -4,6 +4,7 @@ $(document).ready(function(){
 		e.preventDefault(e);
 		var num_to_fb = $("#val").val();
 		fizzBuzz(num_to_fb);
+		$("#val").val(" ");
 	});
 
 });
