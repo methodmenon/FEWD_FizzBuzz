@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	$("#btn_val").click(function(){
+	$("#btn_val").click(function(e){
+		e.preventDefault(e);
 		fB_val = fizzBuzz($("#val").val());
 		fB_li = $("<li></li>").text(fB_val);
 		$("#fb_list").append(fB_li);
