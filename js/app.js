@@ -1,28 +1,28 @@
 $(document).ready(function(){
+
 	$("#btn_val").click(function(e){
 		e.preventDefault(e);
-		fB_val = fizzBuzz($("#val").val());
-		fB_li = $("<li></li>").text(fB_val);
-		$("#fb_list").append(fB_li);
+		var num_to_fb = $("#val").val();
+		fizzBuzz(num_to_fb);
 	});
 
 });
 
 function fizzBuzz(x) {
-
-	for (var i = x; i < 100; i++) {
+	var gen_list = $("#fb_list");
+	for (var i = 1; i <= x; i++) {
 		if ((i % 3) == 0 && ((i % 5) == 0)) {
-			console.log("fizz buzz");
+			gen_list.append("<li>fizz buzz</li>");
 		}
 		else if ((i % 3) == 0) {
-			console.log("fizz");
+			gen_list.append("<li>fizz</li>");
 		}
 		else if ((i % 5) == 0) {
-			console.log("buzz");
+			gen_list.append("<li>buzz</li>");
 		}
 		else
 		{
-			console.log(i);
+			gen_list.append("<li>" + i + "</li>");
 		}
 	}
 }
