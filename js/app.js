@@ -2,10 +2,32 @@ $(document).ready(function(){
 
 	$("#btn_val").click(function(e){
 		e.preventDefault(e);
+		$("#fb_list").remove();
 		$("#fb_div").append('<ul id="fb_list"></ul>');
 		var num_to_fb = $("#val").val();
-		fizzBuzz(num_to_fb);
-		$("#val").val(" ");
+		console.log(typeof num_to_fb);
+		if (isNaN(num_to_fb)) 
+			{alert("Please choose a number");}
+		else 
+		{
+			if(parseInt(num_to_fb))
+			{
+				this_num = parseInt(num_to_fb);
+				if (this_num <= 0)
+				{
+					alert("Please choose a number greater than 0.");
+				}
+				else 
+				{
+					fizzBuzz(num_to_fb);
+					$("#val").val(" ");
+				}
+			}
+			else
+			{
+				alert("Please choose numbers only!");
+			}
+		}
 	});
 	$("#btn_reset").click(function(e){
 		e.preventDefault(e);
@@ -13,13 +35,8 @@ $(document).ready(function(){
 	});
 
 });
-''' 
-edge cases to work with: 
-1) clicking when there is no value
-2) having an input that is not a number
-3) typing a negative number
 
-'''
+
 
 function fizzBuzz(x) {
 	var gen_list = $("#fb_list");
